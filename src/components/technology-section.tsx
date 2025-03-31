@@ -119,8 +119,8 @@ export function TechnologySection() {
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=1200&q=80" 
-                alt="Black and White Jersey Cows" 
+                src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=1200&q=80" 
+                alt="Brown Ox on Mountain" 
                 className="w-full h-64 object-cover"
               />
             </div>
@@ -132,8 +132,8 @@ export function TechnologySection() {
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
               <img 
-                src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=1200&q=80" 
-                alt="Automated Milking System" 
+                src="https://images.unsplash.com/photo-1439886183900-e79ec0057170?auto=format&fit=crop&w=1200&q=80" 
+                alt="Automated Farming Technology" 
                 className="w-full h-64 object-cover"
               />
             </div>
