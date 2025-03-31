@@ -2,6 +2,13 @@
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="relative w-full py-20 md:py-28 lg:py-36 hero-bg-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -15,10 +22,19 @@ export function HeroSection() {
               across West Bengal and beyond.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
-              <Button size="lg" className="bg-farm-green hover:bg-green-700 text-white">
+              <Button 
+                size="lg" 
+                className="bg-farm-green hover:bg-green-700 text-white"
+                onClick={() => scrollToSection('stats')}
+              >
                 Learn More
               </Button>
-              <Button size="lg" variant="outline" className="border-farm-green text-farm-green hover:bg-farm-green/10 dark:border-green-500 dark:text-green-400 dark:hover:bg-green-900/20">
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="border-farm-green text-farm-green hover:bg-farm-green/10 dark:border-green-500 dark:text-green-400 dark:hover:bg-green-900/20"
+                onClick={() => scrollToSection('contact')}
+              >
                 Contact Us
               </Button>
             </div>

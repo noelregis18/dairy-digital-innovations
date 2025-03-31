@@ -1,6 +1,4 @@
 
-import { Button } from "@/components/ui/button";
-
 export function AboutSection() {
   return (
     <section id="about" className="section-padding bg-white dark:bg-gray-900">
@@ -16,9 +14,6 @@ export function AboutSection() {
             <p className="text-gray-600 dark:text-gray-300 mb-8">
               Our commitment to innovation, quality, and sustainability drives everything we do - from our IoT-enabled farm management to our renewable energy investments. We're not just producing milk; we're revolutionizing the dairy industry in India.
             </p>
-            <Button className="bg-farm-green hover:bg-green-700 text-white">
-              Our Story
-            </Button>
           </div>
           <div className="order-1 lg:order-2 relative animate-fade-in">
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">

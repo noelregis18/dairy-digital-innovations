@@ -9,6 +9,7 @@ import { TechnologySection } from "@/components/technology-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { ChatAssistant } from "@/components/chat-assistant";
+import { LiveClock } from "@/components/live-clock";
 
 const Index = () => {
   return (
@@ -17,6 +18,9 @@ const Index = () => {
         <Navbar />
         <main className="pt-16">
           <HeroSection />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-8">
+            <LiveClock />
+          </div>
           <StatsSection />
           <AboutSection />
           <FeaturesSection />

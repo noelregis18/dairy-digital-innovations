@@ -40,20 +40,27 @@ export function ChatAssistant() {
     // Simulate assistant response
     setIsLoading(true);
     setTimeout(() => {
-      // This is a mock response - in a real application, you'd call an API
-      const responses = [
-        "I'd be happy to tell you more about our IoT technology for dairy farming!",
-        "Our farm uses 100% renewable energy, which helps reduce operational costs.",
-        "Each cow wears a digital band that tracks health metrics, milk production, and consumption patterns.",
-        "We have locations in several districts across West Bengal.",
-        "Feel free to visit our farm or contact us directly for more information!",
-      ];
+      // More detailed and realistic responses
+      const userQuestion = input.toLowerCase();
+      let aiResponse = "";
       
-      const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+      if (userQuestion.includes("iot") || userQuestion.includes("technology")) {
+        aiResponse = "Our IoT system uses digital bands attached to each cow that monitor vital health metrics, milk production, water consumption, and feeding patterns. The data syncs with our JioGauSamriddhi app, allowing real-time monitoring of our entire herd's health and productivity.";
+      } else if (userQuestion.includes("farm") || userQuestion.includes("facility")) {
+        aiResponse = "Our state-of-the-art farm features automated brushing machines for cow hygiene, sensor-activated water systems, cooling foggers for temperature regulation, and fully automated milking machines—all powered by renewable energy to minimize our environmental footprint.";
+      } else if (userQuestion.includes("milk") || userQuestion.includes("production")) {
+        aiResponse = "Advent Dairy Farms is addressing the growing demand for pure milk across West Bengal, which has seen a 9.76% growth rate—the highest in India. Our total production capacity is designed to contribute to India's 239.30 million tonnes annual milk production while maintaining the highest quality standards.";
+      } else if (userQuestion.includes("cost") || userQuestion.includes("price")) {
+        aiResponse = "Our pricing is competitive and based on quality tier, volume, and delivery frequency. We operate on a B2B model with customized pricing for different business needs. Please contact our sales team directly for a detailed quote tailored to your requirements.";
+      } else if (userQuestion.includes("contact") || userQuestion.includes("reach")) {
+        aiResponse = "You can reach us via email at noel.regis04@gmail.com, by phone at +91 7319546900, or by filling out the contact form on this website. Our farm is located in Asansol, West Bengal, India, and we welcome scheduled visits from potential business partners.";
+      } else {
+        aiResponse = "Thank you for your interest in Advent Dairy Farms! We're revolutionizing the dairy industry with IoT-enabled farm management, automated systems, and a commitment to quality and sustainability. How can I provide more specific information about our services or technology?";
+      }
       
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: randomResponse },
+        { role: "assistant", content: aiResponse },
       ]);
       setIsLoading(false);
     }, 1000);
@@ -114,7 +121,7 @@ export function ChatAssistant() {
                 <div
                   key={index}
                   className={cn(
-                    "mb-3 max-w-[80%] p-3 rounded-lg",
+                    "mb-3 max-w-[80%] p-3 rounded-lg break-words",
                     message.role === "user"
                       ? "ml-auto bg-farm-green dark:bg-green-700 text-white rounded-br-none"
                       : "mr-auto bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-white rounded-bl-none"

@@ -3,14 +3,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
 import { 
   Linkedin, 
   Github, 
   Twitter, 
   Mail, 
   Phone, 
-  MapPin 
+  MapPin, 
+  Loader2
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -18,6 +21,7 @@ export function ContactSection() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -26,13 +30,43 @@ export function ContactSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // This would normally send the form data to your backend
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-    alert("Message sent! We'll get back to you soon.");
+    setIsSubmitting(true);
+    
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message
+        }
+      });
+      
+      if (error) throw error;
+      
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you soon.",
+        variant: "default"
+      });
+      
+      // Reset form
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const openGoogleMaps = () => {
+    window.open("https://maps.google.com/?q=Asansol,West+Bengal,India", "_blank");
   };
 
   return (
@@ -62,6 +96,7 @@ export function ContactSection() {
                     placeholder="Your name"
                     required
                     className="w-full"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -76,6 +111,7 @@ export function ContactSection() {
                     placeholder="your.email@example.com"
                     required
                     className="w-full"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -89,13 +125,22 @@ export function ContactSection() {
                     placeholder="How can we help you?"
                     required
                     className="w-full h-32"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <Button 
                   type="submit" 
                   className="w-full bg-farm-green hover:bg-green-700 text-white"
+                  disabled={isSubmitting}
                 >
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
               </div>
             </form>
@@ -109,7 +154,13 @@ export function ContactSection() {
                 <MapPin className="h-6 w-6 text-farm-green dark:text-green-400 mr-3 mt-1" />
                 <div>
                   <p className="font-medium text-gray-900 dark:text-white">Location</p>
-                  <p className="text-gray-600 dark:text-gray-300">Asansol, West Bengal, India</p>
+                  <button 
+                    onClick={openGoogleMaps}
+                    className="text-farm-green dark:text-green-400 hover:underline flex items-center"
+                  >
+                    Asansol, West Bengal, India
+                    <span className="text-xs ml-1">(Click to view on map)</span>
+                  </button>
                 </div>
               </div>
               
