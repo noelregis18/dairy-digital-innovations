@@ -116,7 +116,7 @@ export function ChatAssistant() {
 
           {/* Chat messages */}
           {!isMinimized && (
-            <div className="p-4 h-[calc(100%-120px)] overflow-y-auto flex flex-col">
+            <div className="p-4 h-[calc(100%-110px)] overflow-y-auto flex flex-col">
               {messages.map((message, index) => (
                 <div
                   key={index}
@@ -144,7 +144,7 @@ export function ChatAssistant() {
 
           {/* Chat input */}
           {!isMinimized && (
-            <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+            <div className="p-3 border-t border-gray-200 dark:border-gray-700">
               <form onSubmit={handleSubmit} className="flex items-center">
                 <Input
                   type="text"

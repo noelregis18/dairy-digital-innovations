@@ -156,10 +156,9 @@ export function ContactSection() {
                   <p className="font-medium text-gray-900 dark:text-white">Location</p>
                   <button 
                     onClick={openGoogleMaps}
-                    className="text-farm-green dark:text-green-400 hover:underline flex items-center"
+                    className="text-farm-green dark:text-green-400 hover:underline"
                   >
                     Asansol, West Bengal, India
-                    <span className="text-xs ml-1">(Click to view on map)</span>
                   </button>
                 </div>
               </div>

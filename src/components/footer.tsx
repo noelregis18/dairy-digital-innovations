@@ -2,6 +2,10 @@
 import { Leaf } from "lucide-react";
 
 export function Footer() {
+  const openGoogleMaps = () => {
+    window.open("https://maps.google.com/?q=Asansol,West+Bengal,India", "_blank");
+  };
+
   return (
     <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -9,14 +13,17 @@ export function Footer() {
           {/* Company Info */}
           <div>
             <div className="flex items-center mb-4">
-              <Leaf className="h-6 w-6 text-farm-green mr-2" />
-              <h3 className="font-bold text-xl">Advent Dairy Farms</h3>
+              <img 
+                src="/lovable-uploads/877ee574-8fbd-4ef9-8aa1-51b66b320ef7.png" 
+                alt="Advent Dairy Farms Logo" 
+                className="h-10 w-auto mr-2" 
+              />
             </div>
             <p className="text-gray-400 mb-4">
               Transforming milk procurement and transportation with innovative IoT technology.
             </p>
             <p className="text-gray-400 text-sm">
-              "A Glass Half Empty, But Our Vision is Full"
+              "Milking The Best Moments!"
             </p>
           </div>
           
@@ -36,7 +43,14 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact Us</h4>
             <ul className="space-y-2">
-              <li className="text-gray-400">Asansol, West Bengal, India</li>
+              <li>
+                <button 
+                  onClick={openGoogleMaps} 
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
+                  Asansol, West Bengal, India
+                </button>
+              </li>
               <li><a href="mailto:noel.regis04@gmail.com" className="text-gray-400 hover:text-white transition-colors">noel.regis04@gmail.com</a></li>
               <li><a href="tel:+917319546900" className="text-gray-400 hover:text-white transition-colors">+91 7319546900</a></li>
             </ul>
