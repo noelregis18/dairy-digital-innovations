@@ -8,7 +8,6 @@ import { AboutSection } from "@/components/about-section";
 import { TechnologySection } from "@/components/technology-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
-import { ChatAssistant } from "@/components/chat-assistant";
 import { LiveClock } from "@/components/live-clock";
 
 const Index = () => {
@@ -28,7 +27,6 @@ const Index = () => {
           <ContactSection />
         </main>
         <Footer />
-        <ChatAssistant />
       </div>
     </ThemeProvider>
   );

@@ -18,6 +18,7 @@ export function Footer() {
                 alt="Advent Dairy Farms Logo" 
                 className="h-10 w-auto mr-2" 
               />
+              <h3 className="font-bold text-xl">Advent Dairy Farms</h3>
             </div>
             <p className="text-gray-400 mb-4">
               Transforming milk procurement and transportation with innovative IoT technology.

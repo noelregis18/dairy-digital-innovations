@@ -12,7 +12,7 @@ export function TechnologySection() {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
           {/* Left column - IoT System */}
           <div className="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-lg animate-fade-in">
             <div className="flex items-center mb-6">
@@ -111,6 +111,36 @@ export function TechnologySection() {
                 "Our renewable energy implementation has reduced operating costs by 40% compared to traditional dairy farms."
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Image section for dairy automation */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+          <div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1452378174528-3090a4bba7b2?auto=format&fit=crop&w=1200&q=80" 
+                alt="Black and White Jersey Cows" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <h4 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">Our Premium Jersey Cows</h4>
+            <p className="text-gray-600 dark:text-gray-300">
+              Our herd consists of carefully selected Jersey cows known for producing high-quality milk with optimal fat content.
+            </p>
+          </div>
+          <div>
+            <div className="rounded-xl overflow-hidden shadow-lg">
+              <img 
+                src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=1200&q=80" 
+                alt="Automated Milking System" 
+                className="w-full h-64 object-cover"
+              />
+            </div>
+            <h4 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">Automated Milking Systems</h4>
+            <p className="text-gray-600 dark:text-gray-300">
+              Our state-of-the-art milking systems use IoT sensors to optimize the milking process, ensuring maximum comfort for the animals and highest milk quality.
+            </p>
           </div>
         </div>
       </div>

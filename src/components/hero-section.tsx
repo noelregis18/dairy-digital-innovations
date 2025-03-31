@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl text-gray-900 dark:text-white">
-              <span className="text-farm-green dark:text-green-400">Fresh</span> from Farm to Factory
+              <span className="text-farm-green dark:text-green-400">Advent Dairy Farms</span>: Fresh from Farm to Factory
             </h1>
             <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl">
               Transforming milk procurement and transportation with IoT technology
@@ -40,13 +40,13 @@ export function HeroSection() {
             </div>
             <div className="pt-6">
               <p className="font-medium text-farm-green dark:text-green-400">West Bengal's leading dairy innovation</p>
-              <p className="text-sm text-gray-600 dark:text-gray-400">"A Glass Half Empty, But Our Vision is Full"</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">"Milking The Best Moments!"</p>
             </div>
           </div>
           <div className="relative h-64 sm:h-80 md:h-96 lg:h-full rounded-xl overflow-hidden shadow-xl animate-fade-in">
             <img
-              src="https://images.unsplash.com/photo-1465379944081-7f47de8d74ac?auto=format&fit=crop&w=1200&q=80"
-              alt="Dairy Farm with Cows"
+              src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=1200&q=80"
+              alt="Jersey Cows on Farm"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
