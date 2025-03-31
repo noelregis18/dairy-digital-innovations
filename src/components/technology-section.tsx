@@ -1,9 +1,6 @@
-
 import { Monitor, Server, Battery, Cpu } from "lucide-react";
-
 export function TechnologySection() {
-  return (
-    <section id="technology" className="section-padding bg-farm-cream/50 dark:bg-gray-800">
+  return <section id="technology" className="section-padding bg-farm-cream/50 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Our Advanced Technology</h2>
@@ -64,7 +61,9 @@ export function TechnologySection() {
           </div>
           
           {/* Right column - Renewable Energy */}
-          <div className="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-lg animate-fade-in" style={{ animationDelay: "200ms" }}>
+          <div className="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-lg animate-fade-in" style={{
+          animationDelay: "200ms"
+        }}>
             <div className="flex items-center mb-6">
               <Battery className="h-8 w-8 text-farm-green dark:text-green-400 mr-4" />
               <h3 className="text-2xl font-semibold text-gray-900 dark:text-white">Renewable Energy System</h3>
@@ -118,32 +117,19 @@ export function TechnologySection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1493962853295-0fd70327578a?auto=format&fit=crop&w=1200&q=80" 
-                alt="Brown Ox on Mountain" 
-                className="w-full h-64 object-cover"
-              />
+              
             </div>
-            <h4 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">Our Premium Jersey Cows</h4>
-            <p className="text-gray-600 dark:text-gray-300">
-              Our herd consists of carefully selected Jersey cows known for producing high-quality milk with optimal fat content.
-            </p>
+            
+            
           </div>
           <div>
             <div className="rounded-xl overflow-hidden shadow-lg">
-              <img 
-                src="https://images.unsplash.com/photo-1439886183900-e79ec0057170?auto=format&fit=crop&w=1200&q=80" 
-                alt="Automated Farming Technology" 
-                className="w-full h-64 object-cover"
-              />
+              
             </div>
-            <h4 className="text-xl font-semibold mt-4 mb-2 text-gray-900 dark:text-white">Automated Milking Systems</h4>
-            <p className="text-gray-600 dark:text-gray-300">
-              Our state-of-the-art milking systems use IoT sensors to optimize the milking process, ensuring maximum comfort for the animals and highest milk quality.
-            </p>
+            
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

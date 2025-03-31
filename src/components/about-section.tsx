@@ -1,7 +1,5 @@
-
 export function AboutSection() {
-  return (
-    <section id="about" className="section-padding bg-white dark:bg-gray-900">
+  return <section id="about" className="section-padding bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1 animate-fade-in">
@@ -17,15 +15,10 @@ export function AboutSection() {
           </div>
           <div className="order-1 lg:order-2 relative animate-fade-in">
             <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-xl">
-              <img 
-                src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=1200&q=80" 
-                alt="Dairy Farm Landscape" 
-                className="w-full h-full object-cover"
-              />
+              <img alt="Dairy Farm Landscape" className="w-full h-full object-cover" src="/lovable-uploads/a352f364-8f96-4e49-9854-ae73473ec7bb.jpg" />
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }

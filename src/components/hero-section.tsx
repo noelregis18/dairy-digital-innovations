@@ -1,16 +1,14 @@
-
 import { Button } from "@/components/ui/button";
-
 export function HeroSection() {
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <section id="home" className="relative w-full py-20 md:py-28 lg:py-36 hero-bg-pattern">
+  return <section id="home" className="relative w-full py-20 md:py-28 lg:py-36 hero-bg-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
@@ -22,19 +20,10 @@ export function HeroSection() {
               across West Bengal and beyond.
             </p>
             <div className="pt-4 flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
-                className="bg-farm-green hover:bg-green-700 text-white"
-                onClick={() => scrollToSection('stats')}
-              >
+              <Button size="lg" className="bg-farm-green hover:bg-green-700 text-white" onClick={() => scrollToSection('stats')}>
                 Learn More
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-farm-green text-farm-green hover:bg-farm-green/10 dark:border-green-500 dark:text-green-400 dark:hover:bg-green-900/20"
-                onClick={() => scrollToSection('contact')}
-              >
+              <Button size="lg" variant="outline" className="border-farm-green text-farm-green hover:bg-farm-green/10 dark:border-green-500 dark:text-green-400 dark:hover:bg-green-900/20" onClick={() => scrollToSection('contact')}>
                 Contact Us
               </Button>
             </div>
@@ -44,15 +33,10 @@ export function HeroSection() {
             </div>
           </div>
           <div className="relative h-64 sm:h-80 md:h-96 lg:h-full rounded-xl overflow-hidden shadow-xl animate-fade-in">
-            <img
-              src="https://images.unsplash.com/photo-1517022812141-23620dba5c23?auto=format&fit=crop&w=1200&q=80"
-              alt="Jersey Cows on Farm"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+            <img alt="Jersey Cows on Farm" className="w-full h-full object-cover" src="/lovable-uploads/76cc4cf8-f62c-4c0c-9a4a-867fe5609f4c.jpg" />
+            
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
